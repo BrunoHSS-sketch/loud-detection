@@ -24,7 +24,7 @@ class VoiceCalibrator:
                 print(status)
             dbfs = self._calculate_dbfs(indata)
             dbfs_samples.append(dbfs)
-            outdata[:] = indata
+
 
         with sd.Stream(channels=1, samplerate=self.sample_rate, blocksize=self.blocksize, callback=cal_callback):
             sd.sleep(int(duration * 1000))

@@ -1,9 +1,12 @@
 [project]
 name = "loud-detection"
-version = "0.1.2"
+version = "1.0.0"
 requires-python = ">=3.10"
 dependencies = [
+    "customtkinter>=6.0.0",
     "dotenv>=0.9.9",
+    "future>=1.0.0",
     "numpy>=2.2.6",
+    "pystray>=0.19.5",
     "sounddevice>=0.5.6",
 ]
