@@ -1,16 +1,9 @@
-# This is a sample Python script.
+from core.calibrator import VoiceCalibrator
+from core.monitor import VoiceMonitor
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+if __name__ == "__main__":
+    calibrator = VoiceCalibrator()
+    limiar_grito = calibrator.calibrate(duration=5.0)
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    monitor = VoiceMonitor(shout_limit=limiar_grito)
+    monitor.start(duration=10.0)
